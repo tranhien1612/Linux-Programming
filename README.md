@@ -39,13 +39,28 @@ Nguyên lý hoạt động:
 - Nếu một thread bị block thì các thread khác vẫn hoạt động bình thường.
 - Mỗi khi tạo một thread, chúng sẽ được lưu trữ trong stack segment.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/af7f5e1b-1803-4051-8a91-f61e12141947/a13d19a4-918a-46b2-8703-81e56b1b3ec5/image.png)
-
 # IPC
 
 IPC (InterProcess Communication) là các phương thức được sử dụng để giao tiếp giữa 2 process (chia sẻ dữ liệu và đồng bộ truy cập)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/af7f5e1b-1803-4051-8a91-f61e12141947/de0d9c98-ab2a-49c1-99c9-777640f7ea04/image.png)
+```
+--- IPC
+    --- Communication
+            Data Tranfer
+                ByteStream
+                    pipe
+                    FIFO
+                    Stream Socket
+                Message
+                    Queue
+                    Datagram Socket
+            Share Memory
+    --- Synchronization
+            Semaphore
+            File Lock
+            Mutex
+            Conditional Variable
+```
 
 Linux cung cấp một số cơ chế giao tiếp giữa các tiến trình gọi là IPC (Inter-Process Communication):
 
