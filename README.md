@@ -1,6 +1,30 @@
 # Linux-Programming
 
-# Process
+## BSP
+
+Bộ BSP: đóng vai trò kết nối phần cứng với phần mềm
+
+- **Bootloader**: Bộ nạp khởi động
+- **Linux Kernel**: Thành phần quan trọng nhất của hệ thống, chứa bộ lập lịch các tiến trình, quản lý bộ nhớ, quản lý thiết bị…
+- **Rootfs**: Hệ thống file system.
+- **Toolchain**: Bao gồm các thành phần chính sau:
+    - binutils (Công cụ liên quan đến xử lý mã nhị phân): GNU Assembler, Linker, …
+    - gcc: GNU C Complier
+    - C library (libc)
+    - gdb: Debugger
+    
+    Có 2 loại toolchain: 
+    
+    - Native: Chạy trên máy nào sinh mã nhị phân chạy cho máy đó.
+    - Cross: Chạy trên 1 máy nhưng sinh mã nhị phân cho một máy khác.
+
+Các công việc liên quan đến bộ BSP:
+
+- Bootloader: Tối ưu thời gian khởi động, thêm cmd điều khiển, phân vùng flash, …
+- Kernel: Viết driver I2C, SPI, ….
+- Rootfs: Phát triển ứng dụng trên tầng user space
+
+## Process
 
 Program: Là một nhóm các câu lệnh để thực thi một nhiệm vụ cụ thể được thể hiện bằng các file thực thi và nằm trên ổ cứng máy tính.
 
@@ -29,7 +53,7 @@ Thao tác với Process:
 - Kết thúc tiến trình:
     - Dùng hàm exit() hoặc _exit().
 
-# Thread
+## Thread
 
 Thread được tạo ra nhằm mục đích xử lý đồng thời nhiều công việc trong cùng một thời điểm (multi-task).
 
@@ -39,7 +63,7 @@ Nguyên lý hoạt động:
 - Nếu một thread bị block thì các thread khác vẫn hoạt động bình thường.
 - Mỗi khi tạo một thread, chúng sẽ được lưu trữ trong stack segment.
 
-# IPC
+## IPC
 
 IPC (InterProcess Communication) là các phương thức được sử dụng để giao tiếp giữa 2 process (chia sẻ dữ liệu và đồng bộ truy cập)
 
