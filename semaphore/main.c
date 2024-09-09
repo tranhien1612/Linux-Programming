@@ -17,7 +17,7 @@ void *thread(void *arg){
 
     /*Get the value of int pointed by sem and printf*/
     sem_getvalue(&sem, &sem_value);
-    printf("Thread %d esecution, Semaphore value switched to %d (Occupied resource)\n",count, sem_value);
+    printf("Thread %d esecution, Semaphore value switched to %d (Occupied resource)\n",count++, sem_value);
 
     sleep(4);
 
@@ -27,7 +27,6 @@ void *thread(void *arg){
 
     /*Get the value of int pointed by sem and printf*/
     printf("Exit, Semaphore switched to  %d (Resource freed) \n",sem_value);
-    count++;
 }
 
 int main(){
